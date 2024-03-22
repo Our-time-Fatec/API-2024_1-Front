@@ -1,0 +1,16 @@
+.footer {
+    background-color: #f8f8f8; /* Cor de fundo do rodapé */
+    padding: 20px 0; /* Espaçamento interno no topo e na base */
+    text-align: center; /* Alinhar o conteúdo ao centro */
+  }
+  
+  .footer-content {
+    max-width: 1200px; /* Defina a largura máxima do conteúdo do rodapé */
+    margin: 0 auto; /* Centralize o conteúdo na página */
+  }
+  
+  .footer p {
+    font-size: 14px; /* Tamanho da fonte do texto do rodapé */
+    color: #666; /* Cor do texto do rodapé */
+  }
+  

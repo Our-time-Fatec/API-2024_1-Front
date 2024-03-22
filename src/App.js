@@ -1,22 +1,25 @@
 import React from 'react';
-import './App.css';
-import logo from './assets/logo.jpg'; 
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Header from './components/Header/header';
+import Home from './routes/Home/home';
+import About from './routes/About/about';
+import Contact from './routes/Contact/contact';
+import Footer from './components/Footer/footer';
 
-function Header() {
+function App() {
   return (
-    <header>
-      <div className="logo">
-        <img src={logo} alt="Logo da Empresa" />
+    <Router>
+      <div className="App">
+        <Header />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/contact" component={Contact} />
+        </Switch>
+        <Footer />
       </div>
-      <nav>
-        <ul>
-          <li><a href="/">Página Inicial</a></li>
-          <li><a href="/sobre">Sobre</a></li>
-          <li><a href="/contato">Contato</a></li>
-        </ul>
-      </nav>
-    </header>
+    </Router>
   );
 }
 
-export default Header;
+export default App;

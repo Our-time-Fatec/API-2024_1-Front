@@ -1,0 +1,38 @@
+header {
+    background-color: #ec6c1b; /* Cor de fundo do cabeçalho */
+    padding: 20px 0; /* Espaçamento interno no topo e na base */
+  }
+  
+  /*header{
+    width: 250px;
+    height: 100%;
+    background-color: #ec6c1b;
+    border: 2px solid #fc5000;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }*/
+
+  .logo img {
+    max-width: 200px; 
+    margin-top: 0px;
+    /* Define a largura máxima da imagem da logo */
+  }
+  
+  nav ul {
+    list-style-type: none; /* Remove os marcadores de lista */
+    margin: 0; /* Remove as margens padrão */
+    padding: 0; /* Remove o preenchimento padrão */
+  }
+  
+  nav ul li {
+    display: inline; /* Exibe os itens da lista horizontalmente */
+    margin-right: 20px; /* Adiciona espaçamento entre os itens da lista */
+  }
+  
+  nav ul li a {
+    color: #323639; /* Cor do texto dos links */
+    text-decoration: none; /* Remove a decoração do texto dos links */
+    font-weight: bold; /* Define o peso da fonte dos links */
+  }
+  

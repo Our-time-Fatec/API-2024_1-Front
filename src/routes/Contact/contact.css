@@ -1,0 +1,15 @@
+.contact-container {
+    max-width: 800px; /* Defina a largura máxima do container */
+    margin: 0 auto; /* Centralize o container na página */
+    padding: 20px; /* Adicione algum espaçamento interno */
+  }
+  
+  .contact-title {
+    font-size: 24px; /* Tamanho da fonte do título */
+    color: #333; /* Cor do texto */
+  }
+  
+  .contact-description {
+    font-size: 16px; /* Tamanho da fonte do texto */
+    color: #666; /* Cor do texto */
+  }
