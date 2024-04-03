@@ -1,18 +1,31 @@
-header {
-    background-color: #ec6c1b; /* Cor de fundo do cabeçalho */
-    padding: 20px 0; /* Espaçamento interno no topo e na base */
-  }
-  
-  /*header{
-    width: 250px;
-    height: 100%;
-    background-color: #ec6c1b;
-    border: 2px solid #fc5000;
-    position: fixed;
-    top: 0;
-    left: 0;
-  }*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  background-color: #e4e4e4;
+}
+body {
+  size: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+header {
+  background-color: #ee7d37; /* Cor de fundo do cabeçalho */
+  padding: 10px 0; /* Espaçamento interno no topo e na base */
+  width: 100%;
+  text-align: right;
+  float: right;
+  margin: 0; /* Remove a margem padrão do cabeçalho */
+  overflow: hidden;
+}
+  
   .logo img {
     max-width: 200px; 
     margin-top: 0px;

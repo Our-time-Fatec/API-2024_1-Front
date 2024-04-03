@@ -1,7 +1,10 @@
 .footer {
-    background-color: #f8f8f8; /* Cor de fundo do rodapé */
+    background-color: #ee7d37; /* Cor de fundo do rodapé */
     padding: 20px 0; /* Espaçamento interno no topo e na base */
     text-align: center; /* Alinhar o conteúdo ao centro */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
   }
   
   .footer-content {
@@ -13,4 +16,3 @@
     font-size: 14px; /* Tamanho da fonte do texto do rodapé */
     color: #666; /* Cor do texto do rodapé */
   }
-  
