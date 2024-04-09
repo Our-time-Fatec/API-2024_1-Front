@@ -21,9 +21,7 @@ header {
   padding: 10px 0; /* Espaçamento interno no topo e na base */
   width: 100%;
   text-align: right;
-  float: right;
   margin: 0; /* Remove a margem padrão do cabeçalho */
-  overflow: hidden;
 }
   
   .logo img {
