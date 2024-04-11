@@ -1,19 +1,24 @@
 import React from 'react';
-import "./App.css";
-import { BrowserRouter as Router, Switch} from 'react-router-dom';
-import Header from './components/Header/header.tsx';
-import Footer from './components/Footer/footer.tsx';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './pages/Home/home.tsx';
+import Login from './pages/Login/login.tsx';
+import Header from './components/Header/header.tsx'
+import './App.css'; // Importe o arquivo CSS uma vez aqui
 
-
-export default function App() {
+function App(): JSX.Element {
   return (
-    <Router>  
-      <div className='App'>
-        <Header/>
-          <Switch>
-          </Switch>
-        <Footer/>
+    <Router>
+    <div id="page-container">
+      <Header/>
+      <div> {/* Remova a barra invertida para id */}
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/login" component={Login} />
+        </Switch>
       </div>
-    </Router> 
+    </div>
+    </Router>
   );
 }
+
+export default App;
