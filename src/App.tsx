@@ -8,15 +8,11 @@ import './App.css'; // Importe o arquivo CSS uma vez aqui
 function App(): JSX.Element {
   return (
     <Router>
-    <div id="page-container">
-      <Header/>
-      <div> {/* Remova a barra invertida para id */}
+      <div>
         <Switch>
-          <Route path="/" exact component={Home} />
           <Route path="/login" component={Login} />
         </Switch>
       </div>
-    </div>
     </Router>
   );
 }

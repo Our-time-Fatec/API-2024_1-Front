@@ -11,7 +11,7 @@ function Header() {
           <nav>
             <ul>
               <li><a href="/">Página Inicial</a></li>
-              <li><a href="/login">Login</a></li> {/* Altere para "/login" */}
+              <li><a href="/login">Login</a></li>
             </ul>
           </nav>
         </header>

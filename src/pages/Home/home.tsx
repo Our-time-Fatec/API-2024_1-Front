@@ -3,7 +3,7 @@ import './home.css'
 
 function Home() {
   return (
-    <div id='page-container'>
+    <div>
       <h1>Bem-vindo à nossa página inicial!</h1>
       <p>Aqui você encontrará informações sobre nossa empresa.</p>
     </div>

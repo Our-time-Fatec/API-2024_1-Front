@@ -1,7 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 html {
@@ -12,23 +11,8 @@ html {
 }
 body {
   size: 100%;
-  box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
-#div-container{
-  size: 100%;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-header{
-  width: 250px;
-  background-color: #ec6c1b;
-  border: 2px solid #fc5000;
-  position: fixed;
-  top: 0;
-  left: 0;
 }
 .logo {
   flex: 1;

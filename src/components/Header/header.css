@@ -1,6 +1,7 @@
 header {
   background-color: #ee7d37; /* Cor de fundo do cabeçalho */
   padding: 10px 0; /* Espaçamento interno no topo e na base */
+  padding-right: 100%;
   width: 100%;
   text-align: right;
   margin: 0; /* Remove a margem padrão do cabeçalho */
@@ -9,6 +10,7 @@ header {
   .logo img {
     max-width: 200px; 
     margin-top: 0px;
+    box-align:end;
     /* Define a largura máxima da imagem da logo */
   }
   
@@ -20,7 +22,7 @@ header {
   
   nav ul li {
     display: inline; /* Exibe os itens da lista horizontalmente */
-    margin-right: 20px; /* Adiciona espaçamento entre os itens da lista */
+    margin-right: 50px; /* Adiciona espaçamento entre os itens da lista */
   }
   
   nav ul li a {
@@ -28,4 +30,3 @@ header {
     text-decoration: none; /* Remove a decoração do texto dos links */
     font-weight: bold; /* Define o peso da fonte dos links */
   }
-  
