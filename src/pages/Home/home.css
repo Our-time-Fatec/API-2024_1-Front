@@ -16,12 +16,14 @@
   #text-box{
     position: absolute;
     bottom: 80%;
-    left: 37%
+    left: 37% 
   }
 
   h1{
     color: rgb(83, 83, 83);
+    text-align: center;
   }
   p{
     color: rgb(83, 83, 83);
+    text-align: center;
   }
