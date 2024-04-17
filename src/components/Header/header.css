@@ -4,13 +4,18 @@ header {
   width: 100%;
   text-align: right;
   margin: 0; /* Remove a margem padrão do cabeçalho */
+  max-width: 100%; /* Adiciona uma largura máxima para o header */
+  overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse a largura máxima */
 }
   
-  .logo img {
-    max-width: 200px; 
-    margin-top: 0px;
-    /* Define a largura máxima da imagem da logo */
-  }
+.logo {
+  margin-left: 0; /* Empurra a logo para a esquerda */
+}
+
+.logo img {
+  max-width: 200px;
+  margin-top: 0px;
+}
   
   nav ul {
     list-style-type: none; /* Remove os marcadores de lista */
