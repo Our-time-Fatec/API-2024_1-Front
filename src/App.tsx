@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home/home.tsx';
 import Login from './pages/Login/login.tsx';
 import Header from './components/Header/header.tsx'
+import Footer from './components/Footer/footer.tsx';
 import './App.css'; // Importe o arquivo CSS uma vez aqui
 
 function App(): JSX.Element {
