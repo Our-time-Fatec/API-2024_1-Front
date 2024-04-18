@@ -1,4 +1,5 @@
 import React from 'react';
+import "./login.css"
 
 function login(): JSX.Element {
   // Função para lidar com o envio do formulário de login
@@ -8,6 +9,7 @@ function login(): JSX.Element {
   };
 
   return (
+    <div className="container">
     <div className="login-container">
       <h2>Login</h2>
       <form onSubmit={handleLoginSubmit}>
@@ -21,6 +23,7 @@ function login(): JSX.Element {
         </div>
         <button type="submit">Login</button>
       </form>
+    </div>
     </div>
   );
 }

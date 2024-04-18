@@ -9,14 +9,23 @@ header {
 }
   
 .logo {
-  margin-left: 0; /* Empurra a logo para a esquerda */
+  margin-left: 10%; /* Empurra a logo para a esquerda */
 }
 
 .logo img {
   max-width: 200px;
   margin-top: 0px;
 }
-  
+
+.barra {
+  margin-left: 0; /* Empurra a logo para a esquerda */
+}
+
+.barra img {
+  max-width: 10px;
+  margin-top: 0px;
+}
+
   nav ul {
     list-style-type: none; /* Remove os marcadores de lista */
     margin: 0; /* Remove as margens padrão */
