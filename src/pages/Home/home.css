@@ -1,29 +1,14 @@
-/* Estilos para o cabeçalho */
+
   
-  .logo {
-    width: 100px; /* Largura da logo */
-    margin-left: auto;
-  }
-  
-  /* Estilos para o conteúdo da página */
-  .content {
-    margin-top: 20px; /* Espaçamento superior */
-    padding: 20px; /* Espaçamento interno */
-    border: 1px solid #ccc; /* Borda ao redor do conteúdo */
-  
+ 
+#text-box {
+  position: fixed;
+  top: 35%; /* Coloca o topo do elemento no meio da página */
+  left: 50%; /* Coloca a esquerda do elemento no meio da página */
+  transform: translate(-35%, -50%); /* Move o elemento de volta metade do seu próprio tamanho em ambas as direções */
 }
 
-  #text-box{
-    position: absolute;
-    bottom: 80%;
-    left: 32% 
-  }
-
-  h1{
-    color: rgb(83, 83, 83);
-    text-align: center;
-  }
-  p{
-    color: rgb(83, 83, 83);
-    text-align: center;
-  }
+h1, p {
+  color: rgb(83, 83, 83);
+  text-align: center;
+}

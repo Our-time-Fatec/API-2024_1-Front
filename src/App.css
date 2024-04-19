@@ -10,15 +10,4 @@ html {
   -webkit-text-size-adjust: 100%;
   background-color: #e4e4e4;
 }
-body {
-  size: 100%;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-#div-container{
-  size: 100%;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-} 
+

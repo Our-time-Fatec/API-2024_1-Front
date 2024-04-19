@@ -5,11 +5,11 @@ header {
   text-align: right;
   margin: 0; /* Remove a margem padrão do cabeçalho */
   max-width: 100%; /* Adiciona uma largura máxima para o header */
-  overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse a largura máxima */
+  position: relative;
 }
   
 .logo {
-  margin-left: 10%; /* Empurra a logo para a esquerda */
+  margin-right: 85%;
 }
 
 .logo img {
@@ -17,14 +17,7 @@ header {
   margin-top: 0px;
 }
 
-.barra {
-  margin-left: 0; /* Empurra a logo para a esquerda */
-}
 
-.barra img {
-  max-width: 10px;
-  margin-top: 0px;
-}
 
   nav ul {
     list-style-type: none; /* Remove os marcadores de lista */
