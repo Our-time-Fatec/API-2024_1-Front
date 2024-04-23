@@ -1,31 +1,43 @@
-import React from 'react';
-import "./login.css"
+import React, { useState } from 'react';
+import './login.css'
+import api from "../../services/api.ts"
 
-function login(): JSX.Element {
-  // Função para lidar com o envio do formulário de login
-  const handleLoginSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    // Lógica para autenticação do usuário
-  };
+
+const Login: React.FC = () => {
+
+  const [username,setUsername] = useState<string>('');
+  const [password,setPassword] = useState<string>('');
+  const [isButtonDisabled,setIsButtonDisabled] = useState(false);
+
+  const handleLogin = async () =>{
+    setIsButtonDisabled(true);
+    await api.post(`/user/login`, {username, password})
+    .catch((error) => {
+      alert(error.response.data.message)
+    })
+    .finally(() => {
+      setIsButtonDisabled(false);
+    })
+    }
 
   return (
     <div className="container">
     <div className="login-container">
       <h2>Login</h2>
-      <form onSubmit={handleLoginSubmit}>
+      <form>
         <div className="form-group">
           <label htmlFor="username">Username</label>
-          <input type="text" id="username" name="username" required />
+          <input value={username} onChange={(e) => setUsername(e.target.value)} type="text" id="username" name="username" required />
         </div>
         <div className="form-group">
           <label htmlFor="password">Password</label>
-          <input type="password" id="password" name="password" required />
+          <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" id="password" name="password" required />
         </div>
-        <button type="submit">Login</button>
+        <button onClick={handleLogin} disabled={isButtonDisabled} type="submit">Login</button>
       </form>
     </div>
     </div>
   );
 }
 
-export default login;
+export default Login;
