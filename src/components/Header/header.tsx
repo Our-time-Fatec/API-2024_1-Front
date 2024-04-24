@@ -15,7 +15,6 @@ function Header() {
             <ul>
               <li><a href="/">Página Inicial</a></li>
               <li><a href="/about">Sobre nós</a></li> {/* Altere para "/login" */}
-              <li><a href="/projetos">Projetos</a></li> {/* Altere para "/login" */}
               <li><a href="/login">Login</a></li> {/* Altere para "/login" */}
             </ul>
           </nav>

@@ -17,7 +17,7 @@ function App(): JSX.Element {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/login" component={Login} />
-          <Route path="/about" component={About} /> Nav
+          <Route path="/about" component={About} /> 
           <Route path="/projetos" component={Projetos} />
         </Switch>
       </div>

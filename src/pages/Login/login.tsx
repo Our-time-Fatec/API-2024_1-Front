@@ -16,7 +16,7 @@ const Login: React.FC = () => {
     await api.post(`/user/login`, {username, password})
     .then((response) =>{
       alert(response.data.message);
-      history.push('/');
+      history.push('/projetos');
     })
     .catch((error) => {
       alert(error.response.data.message)
