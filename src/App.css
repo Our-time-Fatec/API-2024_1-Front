@@ -8,6 +8,7 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  background-color: #e4e4e4;
+  background-image: url('./assets/background.jpg');
+  background-size: cover; /* Redimensiona a imagem para cobrir todo o elemento */
+  /* Outras propriedades de estilo */
 }
-
