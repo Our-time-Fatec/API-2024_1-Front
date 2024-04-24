@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import './login.css'
 import api from "../../services/api.ts"
 
@@ -8,10 +9,15 @@ const Login: React.FC = () => {
   const [username,setUsername] = useState<string>('');
   const [password,setPassword] = useState<string>('');
   const [isButtonDisabled,setIsButtonDisabled] = useState(false);
+  const history = useHistory();
 
   const handleLogin = async () =>{
     setIsButtonDisabled(true);
     await api.post(`/user/login`, {username, password})
+    .then((response) =>{
+      alert(response.data.message);
+      history.push('/');
+    })
     .catch((error) => {
       alert(error.response.data.message)
     })
