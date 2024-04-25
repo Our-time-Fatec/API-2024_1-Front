@@ -1,14 +1,25 @@
-
-  
- 
-#text-box {
-  position: fixed;
-  top: 35%; 
-  left: 50%; 
-  transform: translate(-35%, -50%);
+.photo-container {
+  display: flex;
+  justify-content: space-around; /* Distribui o espaço entre os elementos e ao redor deles */
+  flex-wrap: wrap; /* Permite que os elementos sejam dispostos em várias linhas se não couberem em uma única linha */
 }
 
-h1, p {
-  color: rgb(83, 83, 83);
-  text-align: center;
+.container.geral {
+  flex: 1 1 300px; /* Define a flexibilidade dos elementos e a largura mínima */
+  margin: 20px; /* Adiciona espaço entre os elementos */
+}
+
+.geral {
+  max-width: 100px; /* Defina o tamanho máximo que deseja para o contêiner */
+  margin-left: auto; /* Centralize horizontalmente */
+  margin-right: auto; /* Centralize horizontalmente */
+}
+
+.geral img {
+  width: 50vh;
+  margin-top: 0px;
+}
+
+#cruzeiro{
+  max-width: 20vh;
 }
