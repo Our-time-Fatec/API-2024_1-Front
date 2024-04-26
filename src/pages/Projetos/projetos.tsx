@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import "./projetos.css"
 
-function projetos(): JSX.Element {
- 
-
+function Projetos(): JSX.Element {
+  const reloadCount = 1;
+  useEffect(() => {
+    const reloadCount = parseInt(sessionStorage.getItem('reloadCount') || '0');
+    if(reloadCount < 2) {
+      sessionStorage.setItem('reloadCount', String(reloadCount + 1));
+      window.location.reload();
+    } else {
+      sessionStorage.removeItem('reloadCount');
+    }
+  }, []);
   return (
     <div id='page-container'>
       <div className='container' id="atibaia">
@@ -26,4 +34,4 @@ function projetos(): JSX.Element {
   );
 }
 
-export default projetos;
+export default Projetos;
