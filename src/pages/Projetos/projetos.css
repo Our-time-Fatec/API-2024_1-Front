@@ -11,13 +11,24 @@
 
 .geral {
   max-width: 100px; /* Defina o tamanho máximo que deseja para o contêiner */
-  margin-left: auto; /* Centralize horizontalmente */
-  margin-right: auto; /* Centralize horizontalmente */
+
+}
+
+.imagem_demonstrativa{
+  display: flex;
+  background-color: black;
+  height: 26vh;
+  width: 51vh;
 }
 
 .geral img {
   width: 50vh;
   margin-top: 0px;
+  max-height: 25vh;
+  margin-left: auto; /* Centralize horizontalmente */
+  margin-right: auto; /* Centralize horizontalmente */
+  margin-bottom: auto;
+  margin-top: auto;
 }
 
 #cruzeiro{
