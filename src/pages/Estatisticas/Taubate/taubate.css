@@ -1,0 +1,14 @@
+
+  
+ 
+#text-box {
+  position: fixed;
+  top: 35%; /* Coloca o topo do elemento no meio da página */
+  left: 50%; /* Coloca a esquerda do elemento no meio da página */
+  transform: translate(-35%, -50%); /* Move o elemento de volta metade do seu próprio tamanho em ambas as direções */
+}
+
+h1, p {
+  color: rgb(83, 83, 83);
+  text-align: center;
+}

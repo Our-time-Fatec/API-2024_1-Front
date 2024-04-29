@@ -1,14 +1,49 @@
-
-  
- 
-#text-box {
-  position: fixed;
-  top: 35%; 
-  left: 50%; 
-  transform: translate(-35%, -50%);
+.photo-container {
+  display: flex;
+  justify-content: space-around; /* Distribui o espaço entre os elementos e ao redor deles */
+  flex-wrap: wrap; /* Permite que os elementos sejam dispostos em várias linhas se não couberem em uma única linha */
 }
 
-h1, p {
-  color: rgb(83, 83, 83);
-  text-align: center;
+.container.geral {
+  flex: 1 1 300px; /* Define a flexibilidade dos elementos e a largura mínima */
+  margin: 20px; /* Adiciona espaço entre os elementos */
+}
+
+.geral {
+  max-width: 100px; /* Defina o tamanho máximo que deseja para o contêiner */
+
+}
+
+.conteudo-com-borda {
+  background-color: #ccc;
+  padding: 10px; /* Adiciona espaço interno para o conteúdo */
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.border{
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+
+.imagem_demonstrativa{
+  display: flex;
+  background-color: black;
+  height: 26vh;
+  width: 51vh;
+}
+
+.geral img {
+  width: 50vh;
+  margin-top: 0px;
+  max-height: 25vh;
+  margin-left: auto; /* Centralize horizontalmente */
+  margin-right: auto; /* Centralize horizontalmente */
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+#cruzeiro{
+  max-width: 20vh;
 }
