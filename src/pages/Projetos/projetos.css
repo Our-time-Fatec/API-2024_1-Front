@@ -19,6 +19,7 @@
   padding: 10px; /* Adiciona espaço interno para o conteúdo */
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  text-decoration: none;
 }
 
 .border{
@@ -42,8 +43,37 @@
   margin-right: auto; /* Centralize horizontalmente */
   margin-bottom: auto;
   margin-top: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+} 
+
+.titulo{
+  text-align: center;
+  font-family: Arial, sans-serif; /* Escolha uma fonte agradável */
+  font-size: 20px; /* Escolha um tamanho de fonte apropriado */
+  color: #0f4571; /* Escolha uma cor de texto agradável */
+  background-color: #c2bfbf;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adicione uma sombra suave */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
-#cruzeiro{
-  max-width: 20vh;
+.text-card{
+
+  font-family: Arial, sans-serif; /* Escolha uma fonte agradável */
+  font-size: 16px; /* Escolha um tamanho de fonte apropriado */
+  line-height: 1.1; /* Escolha uma altura de linha confortável */
+  padding: 10px; /* Adicione algum espaçamento interno */
+  background-color: #c2bfbf;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adicione uma sombra suave */
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.text-card:hover {
+  background-color: #e8e8e8; /* Altere a cor de fundo quando passar o mouse */
+}
+
+.a{
+  text-decoration: none;
 }
