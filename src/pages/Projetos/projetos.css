@@ -17,8 +17,6 @@
 .conteudo-com-borda {
   background-color: #ccc;
   padding: 10px; /* Adiciona espaço interno para o conteúdo */
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
 }
 
 .border{
@@ -42,8 +40,4 @@
   margin-right: auto; /* Centralize horizontalmente */
   margin-bottom: auto;
   margin-top: auto;
-}
-
-#cruzeiro{
-  max-width: 20vh;
 }

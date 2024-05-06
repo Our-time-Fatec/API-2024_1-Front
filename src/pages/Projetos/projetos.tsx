@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./projetos.css"
 
 function Projetos(): JSX.Element {
@@ -24,12 +25,10 @@ function Projetos(): JSX.Element {
         <Card >
       <Card.Img variant="top" src={require('../../assets/atibaia_imagem.jpg')} className='imagem_demonstrativa' alt="Card image" />
       <Card.Body className="conteudo-com-borda">
-        <Card.Title>Meu nome</Card.Title>
+        <Card.Title>Atibaia</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        
+
+        </Card.Text>   
       </Card.Body>
     </Card>
 
@@ -42,10 +41,9 @@ function Projetos(): JSX.Element {
       <Card >
       <Card.Img variant="top" src={require('../../assets/cruzeiro_imagem.jpg')} className='imagem_demonstrativa' alt="Card image" />
       <Card.Body className="conteudo-com-borda">
-        <Card.Title>Meu nome</Card.Title>
+        <Card.Title>Cruzeiro</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+
         </Card.Text>
       </Card.Body>
     </Card>
@@ -58,10 +56,9 @@ function Projetos(): JSX.Element {
       <Card >
       <Card.Img variant="top" src={require('../../assets/taubate_imagem.jpg')} className='imagem_demonstrativa' alt="Card image" />
       <Card.Body className="conteudo-com-borda">
-        <Card.Title>Meu nome</Card.Title>
+        <Card.Title>Taubate</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+
         </Card.Text>
         
       </Card.Body>

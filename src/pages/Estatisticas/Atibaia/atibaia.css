@@ -1,14 +1,42 @@
-
-  
- 
-#text-box {
-  position: fixed;
-  top: 35%; /* Coloca o topo do elemento no meio da página */
-  left: 50%; /* Coloca a esquerda do elemento no meio da página */
-  transform: translate(-35%, -50%); /* Move o elemento de volta metade do seu próprio tamanho em ambas as direções */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100vh;
+  padding: 10px;
 }
 
-h1, p {
-  color: rgb(83, 83, 83);
-  text-align: center;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: gray;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table-container {
+  width: 100vh;
+  justify-content: left;
+  margin-bottom: 20px;
+}
+
+.progress-container {
+  width: 100%;
+}
+
+.map-container {
+  width: 50%; /* Ajuste conforme necessário */
+  background-color: #fff; /* Cor de fundo do mapa ou quadrado em branco */
+  border: 1px solid #ccc; /* Adicione uma borda para visualização */
 }
