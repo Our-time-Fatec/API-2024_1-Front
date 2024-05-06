@@ -2,7 +2,7 @@
 
 ## Scripts no projeto
 
-### `npm start`
+### `npm run start`
 
 Inicia o projeto abrindo a página.
 
