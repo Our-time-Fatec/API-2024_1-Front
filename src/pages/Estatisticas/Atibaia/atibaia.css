@@ -5,12 +5,15 @@ body {
 }
 .container {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: flex-start;
   height: 100vh;
   padding: 10px;
 }
-
+h4{
+  text-align: center;
+  padding-left: 30px;
+}
 table {
   width: 100%;
   border-collapse: collapse;
@@ -26,17 +29,31 @@ tr:nth-child(even) {
 }
 
 .table-container {
-  width: 100vh;
-  justify-content: left;
-  margin-bottom: 20px;
+  width: 100%;
+  flex-grow: 1;
 }
 
 .progress-container {
   width: 100%;
+  margin-left: 10px;
+}
+.progress-container h4 { 
+  top: -20px; 
 }
 
 .map-container {
-  width: 50%; /* Ajuste conforme necessário */
-  background-color: #fff; /* Cor de fundo do mapa ou quadrado em branco */
-  border: 1px solid #ccc; /* Adicione uma borda para visualização */
+  width: 100%;
+  height: 300px;
+  background-color: #fff;
+  border: 1px solid #ccc; 
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .progress-container {
+    margin-left: 0;
+  }
 }

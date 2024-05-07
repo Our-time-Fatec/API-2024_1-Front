@@ -15,21 +15,20 @@ function Atibaia() {
             <table>
                 <thead>
                     <tr>
-                        <th>Coluna 1</th>
-                        <th>Coluna 2</th>
-                        <th>Coluna 3</th>
+                        <th>Estatística </th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Dado 1</td>
-                        <td>Dado 2</td>
-                        <td>Dado 3</td>
+                        <td>Quantidade de Quadriculas</td>
+                        <td>328</td>
                     </tr>
                 </tbody>
             </table>
       </div>
       <div className="progress-container">
+        <h4>Porcentagem do progresso da entrega</h4>
         <Progress />
       </div>
         <div className="map-container">
