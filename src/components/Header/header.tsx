@@ -31,9 +31,11 @@ function Header() {
 
   return (
     <header>
+      <a href="/">
       <div className="logo">
         <img src={require('../../assets/logo.png')} alt="Logo da Empresa" />
       </div>
+      </a>
       {isLoggedIn ? ( 
       <>         
           <nav>
