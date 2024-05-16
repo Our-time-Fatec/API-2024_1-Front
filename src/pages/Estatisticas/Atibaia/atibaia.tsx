@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './atibaia.css'
@@ -9,6 +9,26 @@ function Progress() {
 }
 
 function Atibaia() {
+    const [statistics, setStatistics] = useState({
+      totalSoloExposto: 0,
+      totalNovaEdificacao: 0,
+      totalSupressaoVegetacao: 0,
+      totalExclusoes: 0,
+      totalAlertas: 0,
+      totalCorrecoesAtributo: 0,
+      totalAlteracoes: 0
+    });
+
+    useEffect(() => {
+      fetchData()
+        .then(data => {
+          setStatistics(data); // Atualiza o estado com os dados recebidos
+        })
+        .catch(error => {
+          console.error('Erro ao buscar dados:', error);
+          // Trate o erro conforme necessário
+        });
+    }, []);
   return (
     <div className="container">
       <div className="table-container">
