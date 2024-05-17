@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './atibaia.css'
+import api from "../../../services/api.ts"
 
 function Progress() {
   const now = 88;
@@ -20,14 +21,40 @@ function Atibaia() {
     });
 
     useEffect(() => {
-      fetchData()
-        .then(data => {
-          setStatistics(data); // Atualiza o estado com os dados recebidos
+      api.get('/estatistica/soloexpostoatibaia')
+        .then(response => {
+          setStatistics(prevState => ({
+            ...prevState,
+            totalSoloExposto: response.data[0]?.total_solo_exposto || 0
+          }));
         })
-        .catch(error => {
-          console.error('Erro ao buscar dados:', error);
-          // Trate o erro conforme necessário
-        });
+        .catch(error => console.error('Error fetching Solo Exposto data:', error));
+  
+      api.get('/estatistica/novaedificacaoatibaia')
+        .then(response => {
+          setStatistics(prevState => ({
+            ...prevState,
+            totalNovaEdificacao: response.data[0]?.total || 0
+          }));
+        })
+        .catch(error => console.error('Error fetching Nova Edificação data:', error));
+        
+        api.get('/estatistica/supressaoatibaia')
+        .then(response => {
+          setStatistics(prevState => ({
+            ...prevState,
+            totalSupressaoVegetacao: response.data[0]?.total_supressao || 0
+          }));
+        })
+        .catch(error => console.error('Error fetching Solo Exposto data:', error));
+        api.get('/estatistica/excluiratibaia')
+        .then(response => {
+          setStatistics(prevState => ({
+            ...prevState,
+            totalExclusoes: response.data[0]?.total || 0
+          }));
+        })
+        .catch(error => console.error('Error fetching Solo Exposto data:', error));
     }, []);
   return (
     <div className="container">
@@ -42,19 +69,19 @@ function Atibaia() {
                 <tbody>
                     <tr>
                         <td>Quantidade de Solo exposto</td>
-                        <td>438</td>
+                        <td>{statistics.totalSoloExposto}</td>
                     </tr>
                     <tr>
                         <td>Quantidade de Nova Edificação</td>
-                        <td>112</td>
+                        <td>{statistics.totalNovaEdificacao}</td>
                     </tr>
                     <tr>
                         <td>Quantidade de Supressão de Vegetação</td>
-                        <td>371</td>
+                        <td>{statistics.totalSupressaoVegetacao}</td>
                     </tr>
                     <tr>
                         <td>Quantas vezes foi pedido para excluir algo</td>
-                        <td>2</td>
+                        <td>{statistics.totalExclusoes}</td>
                     </tr>
                     <tr>
                         <td>Quantas vezes foi pedido para fazer um alerta</td>
