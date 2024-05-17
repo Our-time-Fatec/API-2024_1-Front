@@ -64,16 +64,22 @@ function Atibaia() {
       series={[
         {
           data: [
-            { id: 0, value: 478, label: 'Quantidade de Solo exposto' },
-            { id: 1, value: 112, label: 'Quantidade de Nova Edificação' },
-            { id: 2, value: 371, label: 'Quantidade de Supressão de Vegetação' },
+            { id: 0, value: 478 },
+            { id: 1, value: 112 },
+            { id: 2, value: 371 },
+            { id: 3, value: 2},
+            { id: 4, value: 2},
+            { id: 5, value: 2},
+            { id: 6, value: 0}
           ],
         },
       ]}
-      width={200}
-      height={200}
+      width={400}
+      height={400}
     />
+    <h4>Gráfico de completude</h4>
       </div>
+      
         <div className="square"><a>Mapa/Gráfico</a></div>
       </div>
     </div>
