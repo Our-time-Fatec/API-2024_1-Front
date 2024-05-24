@@ -43,7 +43,7 @@ function Atibaia() {
         .then(response => {
           setStatistics(prevState => ({
             ...prevState,
-            totalSupressaoVegetacao: response.data[0]?.total_supressao || 0
+            totalSupressaoVegetacao: response.data[0]?.total || 0
           }));
         })
         .catch(error => console.error('Error fetching Solo Exposto data:', error));
