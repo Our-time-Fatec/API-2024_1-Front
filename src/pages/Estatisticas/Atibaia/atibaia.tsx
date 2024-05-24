@@ -21,7 +21,7 @@ function Atibaia() {
     });
 
     useEffect(() => {
-      api.get('/estatistica/soloexpostoatibaia')
+      api.get('/estatistica/soloexposto/atibaia')
         .then(response => {
           setStatistics(prevState => ({
             ...prevState,
@@ -30,7 +30,7 @@ function Atibaia() {
         })
         .catch(error => console.error('Error fetching Solo Exposto data:', error));
   
-      api.get('/estatistica/novaedificacaoatibaia')
+      api.get('/estatistica/edificacao/atibaia')
         .then(response => {
           setStatistics(prevState => ({
             ...prevState,
@@ -39,7 +39,7 @@ function Atibaia() {
         })
         .catch(error => console.error('Error fetching Nova Edificação data:', error));
         
-        api.get('/estatistica/supressaoatibaia')
+        api.get('/estatistica/supressao/atibaia')
         .then(response => {
           setStatistics(prevState => ({
             ...prevState,
@@ -47,7 +47,7 @@ function Atibaia() {
           }));
         })
         .catch(error => console.error('Error fetching Solo Exposto data:', error));
-        api.get('/estatistica/excluiratibaia')
+        api.get('/estatistica/correcaoexcluir/atibaia')
         .then(response => {
           setStatistics(prevState => ({
             ...prevState,
