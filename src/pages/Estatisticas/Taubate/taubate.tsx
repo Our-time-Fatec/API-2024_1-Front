@@ -5,7 +5,20 @@ import './taubate.css'
 import api from "../../../services/api.ts"
 
 function Progress() {
-  const now = 88;
+  const [statistics, setStatistics] = useState({
+    porcentagem: 0
+  });
+  useEffect(() => {
+    api.get('/estatistica/porcentagem/taubate')
+    .then(response => {
+      setStatistics(prevState => ({
+        ...prevState,
+        porcentagem: response.data[0]?.percentage || 0
+      }));
+    })
+    .catch(error => console.error('Error fetching Solo Exposto data:', error));
+  })
+  const now = statistics.porcentagem;
   return <ProgressBar animated now={now} label={`${now}%`} />;
 }
 
@@ -17,7 +30,8 @@ function Taubate() {
       totalExclusoes: 0,
       totalAlertas: 0,
       totalCorrecoesAtributo: 0,
-      totalAlteracoes: 0
+      totalAlteracoes: 0,
+      porcentagem: 0
     });
 
     useEffect(() => {
@@ -25,12 +39,12 @@ function Taubate() {
         .then(response => {
           setStatistics(prevState => ({
             ...prevState,
-            totalSoloExposto: response.data[0]?.total_solo_exposto || 0
+            totalSoloExposto: response.data[0]?.total || 0
           }));
         })
         .catch(error => console.error('Error fetching Solo Exposto data:', error));
   
-      api.get('/estatistica/novaedificacao/taubate')
+      api.get('/estatistica/edificacao/taubate')
         .then(response => {
           setStatistics(prevState => ({
             ...prevState,
