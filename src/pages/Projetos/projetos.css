@@ -1,3 +1,14 @@
+
+
+#photo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centralize verticalmente */
+  max-height: 100vh; /* Define a altura mínima como 100% da altura da tela */
+  overflow-y: hidden; /* Impede a rolagem vertical */
+}
+
+
 .photo-container {
   display: flex;
   justify-content: space-around; /* Distribui o espaço entre os elementos e ao redor deles */
@@ -6,7 +17,7 @@
 
 .container.geral {
   flex: 1 1 300px; /* Define a flexibilidade dos elementos e a largura mínima */
-  margin: 20px; /* Adiciona espaço entre os elementos */
+  margin: 12px; /* Adiciona espaço entre os elementos */
 }
 
 .geral {

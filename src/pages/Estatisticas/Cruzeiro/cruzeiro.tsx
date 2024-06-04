@@ -2,7 +2,14 @@ import React, { useState, useEffect } from 'react';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './cruzeiro.css'
+import { PieChart } from '@mui/x-charts/PieChart';
 import api from "../../../services/api.ts"
+
+const data = [
+  { id: 0, value: 478},
+  { id: 1, value: 112 },
+  { id: 2, value: 371},
+]
 
 function Progress() {
   const [statistics, setStatistics] = useState({
@@ -20,7 +27,7 @@ function Progress() {
   })
   const now = statistics.porcentagem;
   return <ProgressBar animated now={now} label={`${now}%`} />;
-}
+
 
 function Cruzeiro() {
     const [statistics, setStatistics] = useState({
