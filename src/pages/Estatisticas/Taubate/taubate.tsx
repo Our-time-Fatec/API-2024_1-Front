@@ -3,6 +3,7 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './taubate.css'
 import api from "../../../services/api.ts"
+import { PieChart } from '@mui/x-charts/PieChart';
 
 function Progress() {
   const [statistics, setStatistics] = useState({
@@ -116,8 +117,29 @@ function Taubate() {
         <h4>Porcentagem de grades finalizadas</h4>
         <Progress />
       </div>
-        <div className="map-container">
-        <div className="square"><a>Mapa/Gráfico</a></div>
+      <div className="map-container">
+        <div id="statistics" style={{ margin: '0 auto' }}>
+        <div className="chart-container">
+          <PieChart
+          series={[
+            {
+              data: [
+                { id: 0, value: 478 },
+                { id: 1, value: 112 },
+                { id: 2, value: 371 },
+                { id: 3, value: 2},
+                { id: 4, value: 2},
+                { id: 5, value: 2},
+                { id: 6, value: 0}
+              ],
+            },
+          ]}
+          width={400}
+          height={400}
+          />
+          </div>
+        <h3>Gráfico de completude</h3>
+      </div>
       </div>
     </div>
   );
