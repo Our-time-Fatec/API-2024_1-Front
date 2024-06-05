@@ -25,17 +25,17 @@ h4 {
 table {
   width: 100%;
   border-collapse: collapse;
-  background-color: gray;
+  background-color: #ff8235;
 }
 
 tbody {
   vertical-align: bottom;
-  background-color: #ccc;
+  background-color: #dddddd;
 }
 
 th,
 td {
-  border: 1px solid #ddd;
+  border: 1px solid #ffffff;
   padding: 8px;
   text-align: left;
 }

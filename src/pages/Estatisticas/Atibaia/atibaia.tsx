@@ -6,6 +6,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './atibaia.css'
 import api from "../../../services/api.ts"
 
+const data = [
+  { id: 0, value: 478, label: "facil", color: "pink"},
+  { id: 1, value: 112, label: "murilo" },
+  { id: 2, value: 371, label: "Jesus" }
+]
+
 function Progress() {
   const [statistics, setStatistics] = useState({
     porcentagem: 0
@@ -71,6 +77,30 @@ function Atibaia() {
           }));
         })
         .catch(error => console.error('Error fetching Solo Exposto data:', error));
+        api.get('/estatistica/correcaoalerta/atibaia')
+        .then(response => {
+          setStatistics(prevState => ({
+            ...prevState,
+            totalAlertas: response.data[0]?.total || 0
+          }));
+        })
+        .catch(error => console.error('Error fetching Solo Exposto data:', error));
+        api.get('/estatistica/correcaoatributo/atibaia')
+        .then(response => {
+          setStatistics(prevState => ({
+            ...prevState,
+            totalCorrecoesAtributo: response.data[0]?.total || 0
+          }));
+        })
+        .catch(error => console.error('Error fetching Solo Exposto data:', error));
+        api.get('/estatistica/correcaoalteracao/atibaia')
+        .then(response => {
+          setStatistics(prevState => ({
+            ...prevState,
+            totalAlteracoes: response.data[0]?.total || 0
+          }));
+        })
+        .catch(error => console.error('Error fetching Solo Exposto data:', error));
     }, []);
   return (
     <div className="container">
@@ -101,15 +131,15 @@ function Atibaia() {
                     </tr>
                     <tr>
                         <td>Quantas vezes foi pedido para fazer um alerta</td>
-                        <td>2</td>
+                        <td>{statistics.totalAlertas}</td>
                     </tr>
                     <tr>
                         <td>Quantas vezes foi pedido a correção de um atributo de imagem</td>
-                        <td>2</td>
+                        <td>{statistics.totalCorrecoesAtributo}</td>
                     </tr>
                     <tr>
                         <td>Quantas vezes foi pedido para fazer uma alteração</td>
-                        <td>0</td>
+                        <td>{statistics.totalAlteracoes}</td>
                     </tr>
                 </tbody>
             </table>
@@ -124,15 +154,9 @@ function Atibaia() {
           <PieChart
           series={[
             {
-              data: [
-                { id: 0, value: 478 },
-                { id: 1, value: 112 },
-                { id: 2, value: 371 },
-                { id: 3, value: 2},
-                { id: 4, value: 2},
-                { id: 5, value: 2},
-                { id: 6, value: 0}
-              ],
+              data,
+              highlightScope: { faded: 'global', highlighted: 'item' },
+              faded: { innerRadius: 30, additionalRadius: -30, color: 'gray' },
             },
           ]}
           width={400}
