@@ -130,15 +130,15 @@ function Cruzeiro() {
                     </tr>
                     <tr>
                         <td>Quantas vezes foi pedido para fazer um alerta</td>
-                        <td>2</td>
+                        <td>{statistics.totalAlertas}</td>
                     </tr>
                     <tr>
                         <td>Quantas vezes foi pedido a correção de um atributo de imagem</td>
-                        <td>2</td>
+                        <td>{statistics.totalCorrecoesAtributo}</td>
                     </tr>
                     <tr>
                         <td>Quantas vezes foi pedido para fazer uma alteração</td>
-                        <td>0</td>
+                        <td>{statistics.totalAlteracoes}</td>
                     </tr>
                 </tbody>
             </table>
