@@ -1,14 +1,40 @@
-
-  
- 
 #text-box {
   position: fixed;
-  top: 35%; 
-  left: 50%; 
-  transform: translate(-35%, -50%);
+  top: 95%; /* Coloca o topo do elemento no meio da página */
+  left: 50%; /* Coloca a esquerda do elemento no meio da página */
+  transform: translate(-35%, -30%); /* Move o elemento de volta metade do seu próprio tamanho em ambas as direções */
 }
 
 h1, p {
   color: rgb(83, 83, 83);
   text-align: center;
+}
+
+.container {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2em;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.5em;
+  color: #34495e;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+p:last-child {
+  margin-bottom: 0;
 }

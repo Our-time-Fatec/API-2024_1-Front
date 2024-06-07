@@ -9,15 +9,17 @@ header {
 }
   
 .logo {
-  margin-right: 85%;
+  float: left;
 }
-
 .logo img {
   max-width: 200px;
   margin-top: 0px;
 }
 
-
+nav {
+  padding-top: 40px;
+  overflow: hidden;
+}
 
   nav ul {
     list-style-type: none; /* Remove os marcadores de lista */
@@ -34,4 +36,12 @@ header {
     color: #323639; /* Cor do texto dos links */
     text-decoration: none; /* Remove a decoração do texto dos links */
     font-weight: bold; /* Define o peso da fonte dos links */
+  }
+
+  nav ul li button {
+    background: none;
+    font-weight: bold; 
+    border: none;
+    color: #323639;
+    text-decoration: none;
   }

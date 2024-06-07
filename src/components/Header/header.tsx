@@ -40,17 +40,15 @@ function Header() {
       <>         
           <nav>
             <ul>
-              <li><a href="/">Página Inicial</a></li>
               <li><a href="/about">Sobre nós</a></li>
               <li><a href="/projetos">Projetos</a></li>
-             <li><a onClick={handleLogout}>Sair</a></li>
+             <li><button onClick={handleLogout}>Sair</button></li>
             </ul>
           </nav>
           </>) : ( 
                 <>
                     <nav>
                     <ul>
-                      <li><a href="/">Página Inicial</a></li>
                       <li><a href="/about">Sobre nós</a></li>
                       <li><a href="/login">Login</a></li>
                     </ul>
