@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import ProgressBar from 'react-bootstrap/ProgressBar';
-import { PieChart } from '@mui/x-charts/PieChart';
-import Box from '@mui/material/Box';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './atibaia.css'
-import api from "../../../services/api.ts"
+import './taubate.css'
+import api from "../../services/api.ts"
+import { PieChart } from '@mui/x-charts/PieChart';
 
 const data = [
   { id: 0, value: 478, label: "facil", color: "pink"},
@@ -17,7 +16,7 @@ function Progress() {
     porcentagem: 0
   });
   useEffect(() => {
-    api.get('/estatistica/porcentagem/atibaia')
+    api.get('/estatistica/porcentagem/taubate')
     .then(response => {
       setStatistics(prevState => ({
         ...prevState,
@@ -30,7 +29,7 @@ function Progress() {
   return <ProgressBar animated now={now} label={`${now}%`} />;
 }
 
-function Atibaia() {
+function Taubate() {
     const [statistics, setStatistics] = useState({
       totalSoloExposto: 0,
       totalNovaEdificacao: 0,
@@ -43,7 +42,7 @@ function Atibaia() {
     });
 
     useEffect(() => {
-      api.get('/estatistica/soloexposto/atibaia')
+      api.get('/estatistica/soloexposto/taubate')
         .then(response => {
           setStatistics(prevState => ({
             ...prevState,
@@ -52,7 +51,7 @@ function Atibaia() {
         })
         .catch(error => console.error('Error fetching Solo Exposto data:', error));
   
-      api.get('/estatistica/edificacao/atibaia')
+      api.get('/estatistica/edificacao/taubate')
         .then(response => {
           setStatistics(prevState => ({
             ...prevState,
@@ -61,7 +60,7 @@ function Atibaia() {
         })
         .catch(error => console.error('Error fetching Nova Edificação data:', error));
         
-        api.get('/estatistica/supressao/atibaia')
+        api.get('/estatistica/supressao/taubate')
         .then(response => {
           setStatistics(prevState => ({
             ...prevState,
@@ -69,7 +68,7 @@ function Atibaia() {
           }));
         })
         .catch(error => console.error('Error fetching Solo Exposto data:', error));
-        api.get('/estatistica/correcaoexcluir/atibaia')
+        api.get('/estatistica/correcaoexcluir/taubate')
         .then(response => {
           setStatistics(prevState => ({
             ...prevState,
@@ -77,7 +76,7 @@ function Atibaia() {
           }));
         })
         .catch(error => console.error('Error fetching Solo Exposto data:', error));
-        api.get('/estatistica/correcaoalerta/atibaia')
+        api.get('/estatistica/correcaoalerta/taubate')
         .then(response => {
           setStatistics(prevState => ({
             ...prevState,
@@ -85,7 +84,7 @@ function Atibaia() {
           }));
         })
         .catch(error => console.error('Error fetching Solo Exposto data:', error));
-        api.get('/estatistica/correcaoatributo/atibaia')
+        api.get('/estatistica/correcaoatributo/taubate')
         .then(response => {
           setStatistics(prevState => ({
             ...prevState,
@@ -93,7 +92,7 @@ function Atibaia() {
           }));
         })
         .catch(error => console.error('Error fetching Solo Exposto data:', error));
-        api.get('/estatistica/correcaoalteracao/atibaia')
+        api.get('/estatistica/correcaoalteracao/taubate')
         .then(response => {
           setStatistics(prevState => ({
             ...prevState,
@@ -135,7 +134,7 @@ function Atibaia() {
                     </tr>
                     <tr>
                         <td>Quantas vezes foi pedido a correção de um atributo de imagem</td>
-                        <td>{statistics.totalCorrecoesAtributo}</td>
+                        <td>{statistics.totalAlteracoes}</td>
                     </tr>
                     <tr>
                         <td>Quantas vezes foi pedido para fazer uma alteração</td>
@@ -170,4 +169,4 @@ function Atibaia() {
   );
 }
 
-export default Atibaia;
+export default Taubate;

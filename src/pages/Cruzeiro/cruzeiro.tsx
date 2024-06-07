@@ -3,7 +3,7 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './cruzeiro.css'
 import { PieChart } from '@mui/x-charts/PieChart';
-import api from "../../../services/api.ts"
+import api from "../../services/api.ts"
 
 const data = [
     { id: 0, value: 478, label: "facil", color: "pink"},

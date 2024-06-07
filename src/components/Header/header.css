@@ -5,7 +5,7 @@ header {
   text-align: right;
   margin: 0; /* Remove a margem padrão do cabeçalho */
   max-width: 100%; /* Adiciona uma largura máxima para o header */
-  position: relative;
+
 }
   
 .logo {

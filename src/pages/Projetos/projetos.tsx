@@ -26,8 +26,7 @@ function Projetos(): JSX.Element {
       <Card.Body className="conteudo-com-borda">
         <Card.Title className='titulo'>Atibaia</Card.Title>
         <Card.Text className='text-card'>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        Explore o progresso emocionante do nosso projeto em Atibaia! Descubra as últimas atualizações e conquistas enquanto transformamos ideias em realidade.
         </Card.Text>
         
       </Card.Body>
@@ -44,8 +43,7 @@ function Projetos(): JSX.Element {
       <Card.Body className="conteudo-com-borda">
         <Card.Title className='titulo'>Cruzeiro</Card.Title>
         <Card.Text className='text-card'>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        Explore o progresso emocionante do nosso projeto em Cruzeiro! Descubra as últimas atualizações e conquistas enquanto transformamos ideias em realidade.
         </Card.Text>
       </Card.Body>
     </Card>
@@ -60,8 +58,7 @@ function Projetos(): JSX.Element {
       <Card.Body className="conteudo-com-borda">
         <Card.Title className='titulo'>Taubaté</Card.Title>
         <Card.Text className='text-card'>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        Explore o progresso emocionante do nosso projeto em Taubaté! Descubra as últimas atualizações e conquistas enquanto transformamos ideias em realidade.
         </Card.Text>
         
       </Card.Body>
