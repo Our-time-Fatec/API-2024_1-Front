@@ -40,6 +40,7 @@ function Header() {
       <>         
           <nav>
             <ul>
+              <li><a className='nome'>Bem vindo {username}</a></li>
               <li><a href="/about">Sobre nós</a></li>
               <li><a href="/projetos">Projetos</a></li>
              <li><button onClick={handleLogout}>Sair</button></li>

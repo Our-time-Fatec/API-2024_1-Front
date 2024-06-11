@@ -32,7 +32,7 @@ nav {
     margin-right: 20px; /* Adiciona espaçamento entre os itens da lista */
   }
   
-  nav ul li a {
+  nav ul li a{
     color: #323639; /* Cor do texto dos links */
     text-decoration: none; /* Remove a decoração do texto dos links */
     font-weight: bold; /* Define o peso da fonte dos links */
@@ -44,4 +44,9 @@ nav {
     border: none;
     color: #323639;
     text-decoration: none;
+  }
+  .nome {
+    color: #ffffff; /* Cor do texto dos links */
+    text-decoration: none; /* Remove a decoração do texto dos links */
+    font-weight: bold; /* Define o peso da fonte dos links */
   }
