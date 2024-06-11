@@ -24,7 +24,7 @@ function Progress() {
       }));
     })
     .catch(error => console.error('Error fetching Solo Exposto data:', error));
-  })
+  }, []);
   const now = statistics.porcentagem;
   return <ProgressBar animated now={now} label={`${now}%`} />;
 }
@@ -38,69 +38,63 @@ function Cruzeiro() {
       totalAlertas: 0,
       totalCorrecoesAtributo: 0,
       totalAlteracoes: 0,
-      porcentagem: 0
+      porcentagem: 0,
+      finalizado: 0,
+      emAndamento: 0,
+      vazio: 0
     });
 
     useEffect(() => {
-      api.get('/estatistica/soloexposto/cruzeiro')
-        .then(response => {
+      const fetchStatistics = async () => {
+        try {
+          const [
+            soloExpostoResponse,
+            novaEdificacaoResponse,
+            supressaoVegetacaoResponse,
+            exclusoesResponse,
+            alertasResponse,
+            correcoesAtributoResponse,
+            alteracoesResponse,
+            porcentagemResponse,
+            graficoResponse,
+          ] = await Promise.all([
+            api.get('/estatistica/soloexposto/cruzeiro'),
+            api.get('/estatistica/edificacao/cruzeiro'),
+            api.get('/estatistica/supressao/cruzeiro'),
+            api.get('/estatistica/correcaoexcluir/cruzeiro'),
+            api.get('/estatistica/correcaoalerta/cruzeiro'),
+            api.get('/estatistica/correcaoatributo/cruzeiro'),
+            api.get('/estatistica/correcaoalteracao/cruzeiro'),
+            api.get('/estatistica/porcentagem/cruzeiro'),
+            api.get('/estatistica/grafico/cruzeiro'),
+          ]);
+
           setStatistics(prevState => ({
             ...prevState,
-            totalSoloExposto: response.data[0]?.total || 0
+            totalSoloExposto: soloExpostoResponse.data[0]?.total || 0,
+            totalNovaEdificacao: novaEdificacaoResponse.data[0]?.total || 0,
+            totalSupressaoVegetacao: supressaoVegetacaoResponse.data[0]?.total || 0,
+            totalExclusoes: exclusoesResponse.data[0]?.total || 0,
+            totalAlertas: alertasResponse.data[0]?.total || 0,
+            totalCorrecoesAtributo: correcoesAtributoResponse.data[0]?.total || 0,
+            totalAlteracoes: alteracoesResponse.data[0]?.total || 0,
+            porcentagem: porcentagemResponse.data[0]?.percentage || 0,
+            finalizado: graficoResponse.data[0]?.finalized || 0,
+            emAndamento: graficoResponse.data[0]?.inProgress || 0,
+            vazio: graficoResponse.data[0]?.empty || 0
           }));
-        })
-        .catch(error => console.error('Error fetching Solo Exposto data:', error));
-  
-      api.get('/estatistica/edificacao/cruzeiro')
-        .then(response => {
-          setStatistics(prevState => ({
-            ...prevState,
-            totalNovaEdificacao: response.data[0]?.total || 0
-          }));
-        })
-        .catch(error => console.error('Error fetching Nova Edificação data:', error));
-        
-        api.get('/estatistica/supressao/cruzeiro')
-        .then(response => {
-          setStatistics(prevState => ({
-            ...prevState,
-            totalSupressaoVegetacao: response.data[0]?.total || 0
-          }));
-        })
-        .catch(error => console.error('Error fetching Solo Exposto data:', error));
-        api.get('/estatistica/correcaoexcluir/cruzeiro')
-        .then(response => {
-          setStatistics(prevState => ({
-            ...prevState,
-            totalExclusoes: response.data[0]?.total || 0
-          }));
-        })
-        .catch(error => console.error('Error fetching Solo Exposto data:', error));
-        api.get('/estatistica/correcaoalerta/cruzeiro')
-        .then(response => {
-          setStatistics(prevState => ({
-            ...prevState,
-            totalAlertas: response.data[0]?.total || 0
-          }));
-        })
-        .catch(error => console.error('Error fetching Solo Exposto data:', error));
-        api.get('/estatistica/correcaoatributo/cruzeiro')
-        .then(response => {
-          setStatistics(prevState => ({
-            ...prevState,
-            totalCorrecoesAtributo: response.data[0]?.total || 0
-          }));
-        })
-        .catch(error => console.error('Error fetching Solo Exposto data:', error));
-        api.get('/estatistica/correcaoalteracao/cruzeiro')
-        .then(response => {
-          setStatistics(prevState => ({
-            ...prevState,
-            totalAlteracoes: response.data[0]?.total || 0
-          }));
-        })
-        .catch(error => console.error('Error fetching Solo Exposto data:', error));
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      };
+
+      fetchStatistics();
     }, []);
+    const data = [
+      { id: 0, value: statistics.finalizado, label: "finalizado" ,color: "pink"},
+      { id: 1, value: statistics.emAndamento, label: "Em Andemento"},
+      { id: 2, value: statistics.vazio, label: "Vazio"}
+    ]
   return (
     <div className="container">
       <div className="table-container">

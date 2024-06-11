@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import "./projetos.css"
 
 function Projetos(): JSX.Element {
   const reloadCount = 1;
+
   useEffect(() => {
     const reloadCount = parseInt(sessionStorage.getItem('reloadCount') || '0');
     if(reloadCount < 2) {

@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import ProgressBar from 'react-bootstrap/ProgressBar';
-import { PieChart } from '@mui/x-charts/PieChart';
-import Box from '@mui/material/Box';
+import { PieChart, pieArcLabelClasses } from '@mui/x-charts/PieChart';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './atibaia.css'
 import api from "../../services/api.ts"
 
-const data = [
-  { id: 0, value: 478, label: "facil", color: "pink"},
-  { id: 1, value: 112, label: "murilo" },
-  { id: 2, value: 371, label: "Jesus" }
-]
 
 function Progress() {
   const [statistics, setStatistics] = useState({
@@ -25,7 +19,7 @@ function Progress() {
       }));
     })
     .catch(error => console.error('Error fetching Solo Exposto data:', error));
-  })
+  }, []);
   const now = statistics.porcentagem;
   return <ProgressBar animated now={now} label={`${now}%`} />;
 }
@@ -39,69 +33,63 @@ function Atibaia() {
       totalAlertas: 0,
       totalCorrecoesAtributo: 0,
       totalAlteracoes: 0,
-      porcentagem: 0
+      porcentagem: 0,
+      finalizado: 0,
+      emAndamento: 0,
+      vazio: 0
     });
 
     useEffect(() => {
-      api.get('/estatistica/soloexposto/atibaia')
-        .then(response => {
+      const fetchStatistics = async () => {
+        try {
+          const [
+            soloExpostoResponse,
+            novaEdificacaoResponse,
+            supressaoVegetacaoResponse,
+            exclusoesResponse,
+            alertasResponse,
+            correcoesAtributoResponse,
+            alteracoesResponse,
+            porcentagemResponse,
+            graficoResponse,
+          ] = await Promise.all([
+            api.get('/estatistica/soloexposto/atibaia'),
+            api.get('/estatistica/edificacao/atibaia'),
+            api.get('/estatistica/supressao/atibaia'),
+            api.get('/estatistica/correcaoexcluir/atibaia'),
+            api.get('/estatistica/correcaoalerta/atibaia'),
+            api.get('/estatistica/correcaoatributo/atibaia'),
+            api.get('/estatistica/correcaoalteracao/atibaia'),
+            api.get('/estatistica/porcentagem/atibaia'),
+            api.get('/estatistica/grafico/atibaia'),
+          ]);
+
           setStatistics(prevState => ({
             ...prevState,
-            totalSoloExposto: response.data[0]?.total || 0
+            totalSoloExposto: soloExpostoResponse.data[0]?.total || 0,
+            totalNovaEdificacao: novaEdificacaoResponse.data[0]?.total || 0,
+            totalSupressaoVegetacao: supressaoVegetacaoResponse.data[0]?.total || 0,
+            totalExclusoes: exclusoesResponse.data[0]?.total || 0,
+            totalAlertas: alertasResponse.data[0]?.total || 0,
+            totalCorrecoesAtributo: correcoesAtributoResponse.data[0]?.total || 0,
+            totalAlteracoes: alteracoesResponse.data[0]?.total || 0,
+            porcentagem: porcentagemResponse.data[0]?.percentage || 0,
+            finalizado: graficoResponse.data[0]?.finalized || 0,
+            emAndamento: graficoResponse.data[0]?.inProgress || 0,
+            vazio: graficoResponse.data[0]?.empty || 0,
           }));
-        })
-        .catch(error => console.error('Error fetching Solo Exposto data:', error));
-  
-      api.get('/estatistica/edificacao/atibaia')
-        .then(response => {
-          setStatistics(prevState => ({
-            ...prevState,
-            totalNovaEdificacao: response.data[0]?.total || 0
-          }));
-        })
-        .catch(error => console.error('Error fetching Nova Edificação data:', error));
-        
-        api.get('/estatistica/supressao/atibaia')
-        .then(response => {
-          setStatistics(prevState => ({
-            ...prevState,
-            totalSupressaoVegetacao: response.data[0]?.total || 0
-          }));
-        })
-        .catch(error => console.error('Error fetching Solo Exposto data:', error));
-        api.get('/estatistica/correcaoexcluir/atibaia')
-        .then(response => {
-          setStatistics(prevState => ({
-            ...prevState,
-            totalExclusoes: response.data[0]?.total || 0
-          }));
-        })
-        .catch(error => console.error('Error fetching Solo Exposto data:', error));
-        api.get('/estatistica/correcaoalerta/atibaia')
-        .then(response => {
-          setStatistics(prevState => ({
-            ...prevState,
-            totalAlertas: response.data[0]?.total || 0
-          }));
-        })
-        .catch(error => console.error('Error fetching Solo Exposto data:', error));
-        api.get('/estatistica/correcaoatributo/atibaia')
-        .then(response => {
-          setStatistics(prevState => ({
-            ...prevState,
-            totalCorrecoesAtributo: response.data[0]?.total || 0
-          }));
-        })
-        .catch(error => console.error('Error fetching Solo Exposto data:', error));
-        api.get('/estatistica/correcaoalteracao/atibaia')
-        .then(response => {
-          setStatistics(prevState => ({
-            ...prevState,
-            totalAlteracoes: response.data[0]?.total || 0
-          }));
-        })
-        .catch(error => console.error('Error fetching Solo Exposto data:', error));
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      };
+
+      fetchStatistics();
     }, []);
+    const data = [
+      { id: 0, value: statistics.finalizado,label: "Finalizado", color: "pink"},
+      { id: 1, value: statistics.emAndamento, label: "Em Andamento"},
+      { id: 2, value: statistics.vazio, label: "Vazio"}
+    ]
   return (
     <div className="container">
       <div className="table-container">
@@ -154,11 +142,19 @@ function Atibaia() {
           <PieChart
           series={[
             {
+              arcLabel: (item) => `${item.label} (${item.value})`,
+              arcLabelMinAngle: 45,
               data,
               highlightScope: { faded: 'global', highlighted: 'item' },
               faded: { innerRadius: 30, additionalRadius: -30, color: 'gray' },
             },
           ]}
+          sx={{
+            [`& .${pieArcLabelClasses.root}`]: {
+              fill: 'white',
+              fontWeight: 'bold',
+            },
+          }}
           width={400}
           height={400}
           />
