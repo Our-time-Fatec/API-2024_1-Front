@@ -8,17 +8,22 @@ import './header.css';
 function Header() {
   const [username, setUsername] = useState<string | null>(null);
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
-  const [reloadPage, setReloadPage] = useState<boolean>(false)
+  const [reloadPage, setReloadPage] = useState<boolean>(false);
+  const [isAdmin, setIsAdmin] = useState<boolean>(false);
   const history = useHistory();
   const location = useLocation();
 
   useEffect(() =>{
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('username');
-    if (username){
-      setUsername(JSON.parse(username));
+    if (token) {
+      const decoded: DecodedToken = jwtDecode(token);
+      setUsername(decoded.username);
+      setIsAdmin(decoded.status === 'admin');
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
     }
-    setIsLoggedIn(token ? true : false);
   }, [isLoggedIn]);
 
   const handleLogout = ():void => {
@@ -43,6 +48,7 @@ function Header() {
               <li><a className='nome'>Bem vindo {username}</a></li>
               <li><a href="/about">Sobre nós</a></li>
               <li><a href="/projetos">Projetos</a></li>
+              {isAdmin && <li><a href="/register">Registrar</a></li>}
              <li><button onClick={handleLogout}>Sair</button></li>
             </ul>
           </nav>
