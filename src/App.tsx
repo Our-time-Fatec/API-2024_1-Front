@@ -8,6 +8,7 @@ import Projetos from './pages/Projetos/projetos.tsx';
 import Taubate from './pages/Taubate/taubate.tsx';
 import Cruzeiro from './pages/Cruzeiro/cruzeiro.tsx';
 import Atibaia from './pages/Atibaia/atibaia.tsx';
+import Register from './pages/Registro/register.tsx';
 // import Footer from './components/Footer/footer.tsx';
 import './App.css'; // Importe o arquivo CSS uma vez aqui
 
@@ -25,6 +26,7 @@ function App(): JSX.Element {
           <Route path="/atibaia" component={Atibaia} />
           <Route path="/cruzeiro" component={Cruzeiro} />
           <Route path="/taubate" component={Taubate} />
+          <Route path="/register" component={Register} />
         </Switch>
       </div>
     </div>
