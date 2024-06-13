@@ -12,9 +12,6 @@ function about(): JSX.Element {
     <p>Fundada em 2012, a Visiona Tecnologia Espacial é uma joint-venture entre a Embraer Defesa & Segurança e a Telebras, dedicada à integração de sistemas espaciais e à prestação de serviços baseados em satélites.</p>
     <p>Nossa empresa foi estabelecida para atender aos objetivos do Programa Espacial Brasileiro e às demandas do mercado, oferecendo soluções inovadoras e tecnologicamente avançadas.</p>
   </section>
-  <figure>
-    <img src="http://via.placeholder.com/1500x450?text=Image"/>
-  </figure>
   <section>
   <h2>Nossa História</h2>
     <p>Desde o seu início, a Visiona tem desempenhado um papel crucial no avanço da tecnologia espacial no Brasil.</p>

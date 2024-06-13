@@ -5,7 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './atibaia.css'
 import api from "../../services/api.ts"
 
-
 function Progress() {
   const [statistics, setStatistics] = useState({
     porcentagem: 0
@@ -85,8 +84,9 @@ function Atibaia() {
 
       fetchStatistics();
     }, []);
+    
     const data = [
-      { id: 0, value: statistics.finalizado,label: "Finalizado", color: "pink"},
+      { id: 0, value: statistics.finalizado,label: "Finalizado"},
       { id: 1, value: statistics.emAndamento, label: "Em Andamento"},
       { id: 2, value: statistics.vazio, label: "Vazio"}
     ]
@@ -139,27 +139,27 @@ function Atibaia() {
       <div className="map-container">
         <div id="statistics" style={{ margin: '0 auto' }}>
         <div className="chart-container">
-          <PieChart
-          series={[
-            {
-              arcLabel: (item) => `${item.label} (${item.value})`,
-              arcLabelMinAngle: 45,
-              data,
-              highlightScope: { faded: 'global', highlighted: 'item' },
-              faded: { innerRadius: 30, additionalRadius: -30, color: 'gray' },
-            },
-          ]}
-          sx={{
-            [`& .${pieArcLabelClasses.root}`]: {
-              fill: 'white',
-              fontWeight: 'bold',
-            },
-          }}
-          width={400}
-          height={400}
-          />
+        <PieChart
+          margin={{ top: 10, bottom: 10, left: 100, right:100 }}
+              series={[
+                {
+                  data,
+                  highlightScope: { faded: 'global', highlighted: 'item' },
+                  faded: { innerRadius: 30, additionalRadius: -30, color: 'gray' },
+                },
+              ]}
+              slotProps={{
+                legend: {
+                  direction: 'row',
+                  position: { vertical: 'bottom', horizontal: 'middle' },
+                  padding: 40,
+                },
+              }}
+              width={400} // Aumentando o tamanho do gráfico
+              height={400} // Aumentando o tamanho do gráfico
+            />
           </div>
-        <h3>Gráfico de completude</h3>
+        <h3>Gráfico de Grades</h3>
       </div>
       </div>
     </div>

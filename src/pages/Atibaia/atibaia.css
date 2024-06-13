@@ -68,10 +68,8 @@ td {
   padding-left: 100px;
 }
 
-
 #statistics .chart-container {
   margin: 0 auto;
   /* Remova ou ajuste o padding-left para que haja mais espaço para os rótulos */
   padding-left: 0; /* ou tente reduzir para 50px */
 }
-

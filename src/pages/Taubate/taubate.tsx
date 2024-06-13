@@ -86,7 +86,7 @@ function Taubate() {
       fetchStatistics();
     }, []);
     const data = [
-      { id: 0, value: statistics.finalizado, label: "finalizadas", color: "pink"},
+      { id: 0, value: statistics.finalizado, label: "Finalizadas", color: "pink"},
       { id: 1, value: statistics.emAndamento, label: "Em Andamento" },
       { id: 2, value: statistics.vazio, label: "Vazias" }
     ]
@@ -139,17 +139,25 @@ function Taubate() {
       <div className="map-container">
         <div id="statistics" style={{ margin: '0 auto' }}>
         <div className="chart-container">
-          <PieChart
-          series={[
-            {
-              data,
-              highlightScope: { faded: 'global', highlighted: 'item' },
-              faded: { innerRadius: 30, additionalRadius: -30, color: 'gray' },
-            },
-          ]}
-          width={400}
-          height={400}
-          />
+        <PieChart
+          margin={{ top: 10, bottom: 10, left: 100, right:100 }}
+              series={[
+                {
+                  data,
+                  highlightScope: { faded: 'global', highlighted: 'item' },
+                  faded: { innerRadius: 30, additionalRadius: -30, color: 'gray' },
+                },
+              ]}
+              slotProps={{
+                legend: {
+                  direction: 'row',
+                  position: { vertical: 'bottom', horizontal: 'middle' },
+                  padding: 40,
+                },
+              }}
+              width={400} // Aumentando o tamanho do gráfico
+              height={400} // Aumentando o tamanho do gráfico
+            />
           </div>
         <h3>Gráfico de Grades</h3>
       </div>

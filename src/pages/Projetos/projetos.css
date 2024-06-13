@@ -1,5 +1,3 @@
-
-
 #photo-container {
   display: flex;
   justify-content: center;
@@ -7,7 +5,6 @@
   max-height: 100vh; /* Define a altura mínima como 100% da altura da tela */
   overflow-y: hidden; /* Impede a rolagem vertical */
 }
-
 
 .photo-container {
   display: flex;
@@ -18,11 +15,12 @@
 .container.geral {
   flex: 1 1 300px; /* Define a flexibilidade dos elementos e a largura mínima */
   margin: 12px; /* Adiciona espaço entre os elementos */
+  max-width: 600px; /* Define o tamanho máximo que deseja para o contêiner */
 }
 
 .geral {
-  max-width: 100px; /* Defina o tamanho máximo que deseja para o contêiner */
-
+  height: 100%; /* Remove a altura fixa do card */
+  flex-direction: column; /* Garante que o conteúdo do card seja empilhado verticalmente */
 }
 
 .conteudo-com-borda {
@@ -31,34 +29,24 @@
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   text-decoration: none;
+  flex: 1; /* Garante que o conteúdo do card ocupe o espaço restante */
 }
 
-.border{
+.border {
   border: 2px solid black;
   border-radius: 10px;
+  flex-direction: column;
 }
 
-
-.imagem_demonstrativa{
-  display: flex;
-  background-color: black;
-  height: 26vh;
-  width: 51vh;
-}
-
-.geral img {
-  width: 50vh;
-  margin-top: 0px;
-  max-height: 25vh;
-  margin-left: auto; /* Centralize horizontalmente */
-  margin-right: auto; /* Centralize horizontalmente */
-  margin-bottom: auto;
-  margin-top: auto;
+.imagem_demonstrativa {
+  width: 100%;
+  height: 200px; /* Define uma altura fixa para a imagem */
+  object-fit: cover; /* Garante que a imagem preencha completamente o espaço do container */
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-} 
+}
 
-.titulo{
+.titulo {
   text-align: center;
   font-family: Arial, sans-serif; /* Escolha uma fonte agradável */
   font-size: 20px; /* Escolha um tamanho de fonte apropriado */
@@ -67,10 +55,11 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adicione uma sombra suave */
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  margin: 0; /* Remove a margem */
+  padding: 10px; /* Adiciona espaçamento interno */
 }
 
-.text-card{
-
+.text-card {
   font-family: Arial, sans-serif; /* Escolha uma fonte agradável */
   font-size: 16px; /* Escolha um tamanho de fonte apropriado */
   line-height: 1.1; /* Escolha uma altura de linha confortável */
@@ -79,13 +68,13 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adicione uma sombra suave */
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  flex: 1; /* Garante que o texto ocupe o espaço restante */
 }
 
 .text-card:hover {
   background-color: #e8e8e8; /* Altere a cor de fundo quando passar o mouse */
 }
 
-.a{
+.a {
   text-decoration: none;
 }
-

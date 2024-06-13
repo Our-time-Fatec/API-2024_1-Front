@@ -14,7 +14,10 @@ body {
 
 #statistics {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 h4 {
@@ -25,17 +28,17 @@ h4 {
 table {
   width: 100%;
   border-collapse: collapse;
-  background-color: gray;
+  background-color: #ff8235;
 }
 
 tbody {
   vertical-align: bottom;
-  background-color: #ccc;
+  background-color: #dddddd;
 }
 
 th,
 td {
-  border: 1px solid #ddd;
+  border: 1px solid #ffffff;
   padding: 8px;
   text-align: left;
 }
@@ -60,15 +63,13 @@ td {
   height: 500px;
 }
 
-#statistics{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.chart-container {
+  margin: 0 auto;
+  padding-left: 100px;
 }
 
 #statistics .chart-container {
   margin: 0 auto;
-  padding-left: 100px;
+  /* Remova ou ajuste o padding-left para que haja mais espaço para os rótulos */
+  padding-left: 0; /* ou tente reduzir para 50px */
 }
